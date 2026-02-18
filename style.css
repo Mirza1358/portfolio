@@ -21,7 +21,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Playfair Display', serif;
     color: #e6f1ff;
     font-weight: 700;
@@ -215,30 +220,32 @@ section {
 
 .img-wrapper {
     position: relative;
-    border-radius: 4px;
-    background-color: var(--accent);
-}
-
-.img-placeholder {
-    width: 100%;
-    height: 300px;
-    background: #112240;
-    border-radius: 4px;
-    display: flex; /* Centering */
-    justify-content: center;
-    align-items: center;
-    color: var(--accent);
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    border-radius: 50%;
+    /* Circular container */
+    padding: 5px;
+    /* Spacing for border */
+    background: transparent;
     border: 2px solid var(--accent);
-    position: relative;
-    top: 0;
-    transition: all 0.2s ease;
+    width: 250px;
+    /* Small-Medium size */
+    height: 250px;
+    margin: 0 auto;
+    /* Center if needed */
+    overflow: hidden;
 }
 
-.img-placeholder:hover {
-    top: -10px;
-    left: -10px;
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(20%);
+    /* Artistic touch */
+    transition: filter 0.3s ease;
+}
+
+.profile-img:hover {
+    filter: grayscale(0%);
 }
 
 /* Experience Section */
@@ -287,7 +294,8 @@ section {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    gap: 100px; /* Space between projects */
+    gap: 100px;
+    /* Space between projects */
 }
 
 .project-card {
@@ -297,7 +305,8 @@ section {
 }
 
 .project-content {
-    grid-column: 1 / 9; /* Text takes mostly left */
+    grid-column: 1 / 9;
+    /* Text takes mostly left */
     z-index: 2;
 }
 
@@ -384,15 +393,34 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .navbar { padding: 20px; }
-    nav { display: none; } /* Simplified for demo */
-    
-    #hero, section { padding: 80px 25px; }
-    
-    .name { font-size: 3rem; }
-    .tagline { font-size: 2rem; }
-    
-    .about-grid { grid-template-columns: 1fr; }
-    
-    .project-content { grid-column: 1 / -1; }
+    .navbar {
+        padding: 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* Simplified for demo */
+
+    #hero,
+    section {
+        padding: 80px 25px;
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+
+    .tagline {
+        font-size: 2rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-content {
+        grid-column: 1 / -1;
+    }
 }
